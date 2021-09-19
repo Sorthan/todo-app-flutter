@@ -361,7 +361,10 @@ class TodoList extends GetView {
     final drawerItems = ListView(
       children: [
         UserAccountsDrawerHeader(
-          decoration: const BoxDecoration(color: Color(0xFF7F54D4)),
+          arrowColor: Colors.white,
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(104, 93, 185, 1),
+          ),
           accountName: const Text(
             "Hi Sorathan",
             style: TextStyle(
@@ -376,26 +379,48 @@ class TodoList extends GetView {
               fontSize: 10,
             ),
           ),
-          currentAccountPicture: Image.asset('assets/images/profile.png'),
-          currentAccountPictureSize: const Size(80, 80),
+          currentAccountPicture: CircleAvatar(
+            radius: 150,
+            backgroundColor: const Color(0xFF7F54D4),
+            child: Image.asset('assets/images/Profile_Shino_Normal.png'),
+          ),
         ),
         ListTile(
           title: const Text("Go Back"),
-          leading: const Icon(Icons.arrow_back),
+          leading: const Icon(
+            Icons.arrow_back,
+            color: Color(0xFF7F54D4),
+          ),
           onTap: () {
             Get.back();
           },
         ),
         ListTile(
+          title: const Text("Home"),
+          leading: const Icon(
+            Icons.home,
+            color: Color(0xFF7F54D4),
+          ),
+          onTap: () {
+            Get.toNamed('home');
+          },
+        ),
+        ListTile(
           title: const Text("Lockscreen"),
-          leading: const Icon(Icons.lock),
+          leading: const Icon(
+            Icons.lock,
+            color: Color(0xFF7F54D4),
+          ),
           onTap: () {
             Get.toNamed('security');
           },
         ),
         ListTile(
           title: const Text("Exit"),
-          leading: const Icon(Icons.exit_to_app),
+          leading: const Icon(
+            Icons.exit_to_app,
+            color: Color(0xFF7F54D4),
+          ),
           onTap: () {
             exit(0);
           },
