@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:todoapp/modules/Todo/classes/todo_class.dart';
 
 class Controller extends GetxController {
-  var todos = <Todo>[].obs;
+  RxList todos = <Todo>[].obs;
 
   void addTodo(int id, String todoname) {
     Todo newItem = Todo(id, todoname, false);

@@ -412,7 +412,7 @@ class TodoList extends GetView {
             color: Color(0xFF7F54D4),
           ),
           onTap: () {
-            Get.toNamed('security');
+            Get.toNamed('lockscreen');
           },
         ),
         ListTile(

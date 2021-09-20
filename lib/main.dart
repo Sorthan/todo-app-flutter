@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/modules/Lockscreen/index.dart';
 import 'package:todoapp/modules/Todo/index.dart';
 import 'package:todoapp/modules/Home/index.dart';
 import 'package:todoapp/modules/Security/index.dart';
@@ -21,6 +22,7 @@ void main() {
         initialRoute: '/home',
         getPages: [
           GetPage(name: '/home', page: () => const HomePage()),
+          GetPage(name: '/lockscreen', page: () => const LockScreen()),
           GetPage(name: '/security', page: () => SecurityPage()),
           GetPage(name: '/todo', page: () => TodoList())
         ],
