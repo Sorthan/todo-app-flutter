@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:todoapp/modules/Todo/controller.dart';
 import 'package:get/get.dart';
 import 'package:todoapp/modules/Todo/classes/todo_class.dart';
 
