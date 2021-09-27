@@ -319,33 +319,30 @@ class TodoList extends GetView {
   }
 
   showTodosNotCompletedData(BuildContext context) {
-    return GetX<Controller>(
-      init: Controller(),
-      builder: (controller) {
-        return Padding(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-          child: Column(
-            children: [
-              Text("You have "
-                  '${controller.todos.where((item) => !item.isComplete).length}'
-                  " not completed task"),
-              const Divider(
-                color: Colors.white,
-                height: 20,
-                thickness: 3,
-                indent: 20,
-                endIndent: 20,
-              ),
-              Column(
-                children: controller.todos
-                    .where((notcompleteItem) => !notcompleteItem.isComplete)
-                    .map((item) => createTodosData(item, context))
-                    .toList(),
-              ),
-            ],
-          ),
-        );
-      },
+    return Obx(
+      () => Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        child: Column(
+          children: [
+            Text("You have "
+                '${controller.todos.where((item) => !item.isComplete).length}'
+                " not completed task"),
+            const Divider(
+              color: Colors.white,
+              height: 20,
+              thickness: 3,
+              indent: 20,
+              endIndent: 20,
+            ),
+            Column(
+              children: controller.todos
+                  .where((notcompleteItem) => !notcompleteItem.isComplete)
+                  .map((item) => createTodosData(item, context))
+                  .toList(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
